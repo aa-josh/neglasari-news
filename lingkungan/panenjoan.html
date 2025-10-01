@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id" x-data="{ sidebarOpen: false }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIM | Neglasari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-white font-sans">
+    <div class="flex">
+      <!-- Main Content -->
+      <div class="flex-1 flex flex-col min-h-screen">
+        <!-- Header Mobile -->
+        <header class="bg-white shadow-lg text-teal-900 relative z-50">
+          <!-- Bagian Mobile / Tablet ke bawah -->
+          <div class="flex items-center justify-center p-2">
+            <div class="flex items-center lg:space-x-12">
+              <img
+                src="../public/NEWS.png"
+                alt="NeglasariNews"
+                class="w-auto h-10 me-4 object-cover md:h-[45px] lg:h-[65px]"
+              />
+              <h2 class="text-center text-md font-semibold lg:text-3xl">
+                Neglasari<span class="text-center text-lg font-bold lg:text-4xl"
+                  >News</span
+                >
+              </h2>
+            </div>
+          </div>
+          <div
+            class="text-center text-sm lg:text-lg lg:font-semibold font-bold space-x-2 lg:space-x-4 mb-3"
+          >
+            <a
+              href="../index.html"
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Beranda</a
+            >
+            <a
+              href="#"
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Lingkungan</a
+            >
+            <a
+              href=""
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Kebersihan</a
+            >
+            <a
+              href=""
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Keamanan</a
+            >
+            <a
+              href="../bumdes/bumdes1.html"
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >BumDes</a
+            >
+            <a
+              href=""
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >KDMP</a
+            >
+            <a
+              href=""
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >UMKM</a
+            >
+            <div
+              x-data="{ open: false }"
+              class="lg:hidden relative inline-block"
+            >
+              <!-- Tombol Utama -->
+              <button
+                @click="open = !open"
+                class="hover:text-blue-700 hover:font-bold hover:underline"
+              >
+                Ekonomi
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                x-show="open"
+                @click.away="open = false"
+                class="absolute left-0 mt-2 w-30 bg-white border rounded-md shadow-lg"
+              >
+                <a
+                  href="../bumdes/bumdes1.html"
+                  class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >BumDes</a
+                >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >KDMP</a
+                >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >UMKM</a
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="lg:p-8 pt-6 w-full flex-1 flex flex-col lg:mt-20">
+          <div class="flex-1">
+            <section class="bg-gray-100 py-12">
+              <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">
+                  Lokasi Kami
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <!-- Google Maps -->
+                  <div class="w-full h-64 md:h-96">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.7009142271336!2d107.72083077025839!3d-7.073192053675212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c10068a541d3%3A0x60f5272cefd1ff03!2sDesa%20Wisata%20Neglasari!5e1!3m2!1sid!2sid!4v1758268040036!5m2!1sid!2sid"
+                      class="w-full h-full rounded-lg shadow"
+                      allowfullscreen=""
+                      loading="lazy"
+                    >
+                    </iframe>
+                  </div>
+
+                  <!-- Keterangan Lokasi -->
+                  <div class="text-center md:text-left">
+                    <h3 class="text-xl font-semibold mb-4">Alamat</h3>
+                    <p class="text-gray-700 mb-2">
+                      Kp. Neglasari Rw 06 Desa Neglasari Kecamatan Majalaya,
+                      Kabupaten Bandung, Jawa Barat.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                      Kami berlokasi strategis di kawasan desa wisata, mudah
+                      diakses dari pusat kota Bogor.
+                    </p>
+                    <a
+                      href="https://maps.app.goo.gl/BbrmfZdSKxw9cbqH9"
+                      target="_blank"
+                      class="inline-block bg-teal-700 text-white py-2 px-4 rounded-lg shadow hover:bg-teal-800 transition"
+                    >
+                      Buka di Google Maps
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <footer class="bg-gray-100 border-t border-gray-500 text-gray-800">
+          <div
+            class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <!-- Brand -->
+            <div>
+              <div class="flex items-center space-x-3">
+                <img
+                  src="public/kim.jpg"
+                  alt="Logo KIM"
+                  class="h-12 w-12 rounded-full"
+                />
+                <h2 class="text-lg font-bold text-black">
+                  KIM i-smart Desa Neglasari
+                </h2>
+              </div>
+              <p class="mt-4 text-sm leading-6">
+                Kelompok Informasi Masyarakat sebagai pusat informasi dan
+                literasi digital bagi warga desa.
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold text-black mb-4">
+                Tautan Cepat
+              </h3>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a href="index.html" class="hover:text-blue-400">Beranda</a>
+                </li>
+                <li>
+                  <a href="tentang.html" class="hover:text-blue-400"
+                    >Tentang KIM</a
+                  >
+                </li>
+                <li>
+                  <a href="bumdes.html" class="hover:text-blue-400">BUMDesa</a>
+                </li>
+                <li>
+                  <a href="panenjoan.html" class="hover:text-blue-400"
+                    >Desa Wisata</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Pokdarwis</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Informasi Desa</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Kegiatan Desa</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Galeri</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h3 class="text-lg font-semibold text-black mb-4">
+                Hubungi Kami
+              </h3>
+              <p class="text-sm">KIM i-smart Neglasari</p>
+              <p class="text-sm">
+                email:
+                <a
+                  href="mailto:kimneglasari@gmail.com"
+                  class="text-blue-400 hover:text-blue-600"
+                >
+                  kimneglasari@gmail.com
+                </a>
+              </p>
+
+              <!-- Social Icons -->
+              <div class="flex space-x-4 mt-4">
+                <!-- Facebook -->
+                <a href="#" aria-label="Facebook" class="hover:text-blue-500"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/facebook-new.png"
+                    alt="facebook-new"
+                /></a>
+
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/kim_neglasari/"
+                  aria-label="Instagram"
+                  class="hover:text-pink-500"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png"
+                    alt="instagram-new--v1"
+                  />
+                </a>
+
+                <!-- YouTube -->
+                <a href="#" aria-label="YouTube" class="hover:text-red-500"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/youtube-squared.png"
+                    alt="youtube-squared"
+                  />
+                </a>
+
+                <!-- Tiktok -->
+                <a
+                  href="https://www.tiktok.com/@kim_neglasari"
+                  aria-label="Tiktok"
+                  class="hover:text-gray-800"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/tiktok--v1.png"
+                    alt="tiktok--v1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom -->
+          <div
+            class="border-t border-gray-500 text-center py-4 text-sm text-gray-400"
+          >
+            &copy; 2025 Kelompok Informasi Masyarakat. Semua Hak Dilindungi.
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
