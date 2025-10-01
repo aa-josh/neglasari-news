@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth" x-data="{ sidebarOpen: false }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeglasariNews</title>
+    <link rel="shortcut icon" href="public/NEWS.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      .swiper {
+        width: 100% !important;
+        max-width: 100vw !important; /* batasi lebar hanya sebatas layar */
+      }
+
+      .swiper-slide {
+        width: 100% !important; /* setiap slide selalu ikut lebar layar */
+      }
+
+      body {
+        overflow-x: hidden; /* cegah scroll horizontal */
+      }
+    </style>
+  </head>
+  <body class="bg-white font-sans">
+    <div class="flex">
+      <!-- Main Content -->
+      <div class="flex-1 flex flex-col min-h-screen">
+        <!-- Header Mobile -->
+        <header class="bg-white shadow-lg text-teal-900 relative z-50">
+          <!-- Bagian Mobile / Tablet ke bawah -->
+          <div class="flex items-center justify-center p-2">
+            <div class="flex items-center lg:space-x-12">
+              <img
+                src="public/NEWS.png"
+                alt="NeglasariNews"
+                class="w-auto h-10 me-4 object-cover md:h-[45px] lg:h-[65px]"
+              />
+              <h2 class="text-center text-md font-semibold lg:text-3xl">
+                Neglasari<span class="text-center text-lg font-bold lg:text-4xl"
+                  >News</span
+                >
+              </h2>
+            </div>
+          </div>
+          <div
+            class="text-center text-sm lg:text-lg lg:font-semibold font-bold space-x-2 lg:space-x-4 mb-3"
+          >
+            <a
+              href="#"
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Beranda</a
+            >
+            <a
+              href="lingkungan/panenjoan.html"
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Lingkungan</a
+            >
+            <a
+              href=""
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Kebersihan</a
+            >
+            <a
+              href=""
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Keamanan</a
+            >
+            <a
+              href="bumdes/bumdes1.html"
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >BumDes</a
+            >
+            <a
+              href=""
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >KDMP</a
+            >
+            <a
+              href=""
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >UMKM</a
+            >
+            <div
+              x-data="{ open: false }"
+              class="lg:hidden relative inline-block"
+            >
+              <!-- Tombol Utama -->
+              <button
+                @click="open = !open"
+                class="hover:text-blue-700 hover:font-bold hover:underline"
+              >
+                Ekonomi
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                x-show="open"
+                @click.away="open = false"
+                class="absolute left-0 mt-2 w-30 bg-white border rounded-md shadow-lg"
+              >
+                <a href="bumdes/bumdes1.html" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >BumDes</a
+                >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >KDMP</a
+                >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >UMKM</a
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="pt-2 w-full flex-1 flex flex-col lg:px-8">
+          <div class="flex-1">
+            <section class="px-6 mt-4 mb-4 lg:mt-8 relative">
+              <div class="relative flex items-center">
+                <img src="public/dot.png" alt="dot" class="w-20 lg:w-[300px]" />
+                <div
+                  class="absolute top-0 right-0 flex justify-center space-x-4 lg:space-x-6"
+                >
+                  <img
+                    src="public/kominfo.png"
+                    alt="kominfo"
+                    class="h-12 lg:h-24"
+                  />
+                  <img
+                    src="public/kab-bandung.png"
+                    alt="kab-bandung"
+                    class="h-12 lg:h-24"
+                  />
+                  <img
+                    src="public/bum.jpg"
+                    alt="kominfo"
+                    class="h-14 lg:h-[120px]"
+                  />
+                  <img
+                    src="public/logo.png"
+                    alt="kim"
+                    class="h-12 lg:h-24 rounded-full"
+                  />
+                </div>
+              </div>
+              <div class="-mt-12 lg:-mt-64 mb-2 relative text-start">
+                <h5 class="text-md lg:text-2xl text-black mb-2">
+                  Selamat Datang Di Portal Berita Resmi
+                </h5>
+                <h2
+                  class="text-xl lg:text-4xl font-semibold text-teal-800 mb-2"
+                >
+                  Neglasari<span class="text-2xl italic font-bold lg:text-5xl"
+                    >News</span
+                  >
+                </h2>
+                <p class="text-gray-900 font-bold mb-4">
+                  Desa Neglasari Kec. Majalaya Kab. Bandung
+                </p>
+              </div>
+              <div class="mb-2 relative text-start">
+                <p class="text-black text-sm lg:text-xl mb-2">
+                  <strong class="text-teal-800">Neglasari News</strong> hadir
+                  sebagai ruang bersama untuk berbagi informasi, menyatukan
+                  aspirasi, dan memperkuat kebersamaan warga. Temukan berita
+                  terbaru, kegiatan desa, hingga inspirasi dari masyarakat
+                  sekitar.
+                </p>
+              </div>
+            </section>
+
+            <section class="bg-white -mt-14 lg:mt-10">
+              <div class="w-full max-w-screen overflow-hidden">
+                <!-- Carousel Container -->
+                <div class="swiper mySwiper w-full">
+                  <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                      <div class="bg-white rounded-xl shadow overflow-hidden">
+                        <img
+                          src="public/bum1.jpg"
+                          class="w-full h-60 object-scale-down lg:object-cover lg:w-auto lg:h-100 lg:m-auto"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                      <div class="bg-white rounded-xl shadow overflow-hidden">
+                        <img
+                          src="public/bum2.jpg"
+                          class="w-full h-60 object-scale-down lg:object-cover lg:w-auto lg:h-100 lg:m-auto"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                      <div class="bg-white rounded-xl shadow overflow-hidden">
+                        <img
+                          src="public/bum3.jpg"
+                          class="w-full h-60 object-scale-down lg:object-cover lg:w-auto lg:h-100 lg:m-auto"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                      <div class="bg-white rounded-xl shadow overflow-hidden">
+                        <img
+                          src="public/peresmian.jpg"
+                          class="w-full h-60 object-scale-down lg:object-cover lg:w-auto lg:h-100 lg:m-auto"
+                        />
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </section>
+
+            <section class="bg-gray-200 py-2 mt-8 mb-10 border-t border-gray-500 lg:bg-white lg:mt-8">
+              <div class="max-w-7xl mx-auto px-4">
+                <h2
+                  class="text-lg font-semibold mb-4 mt-2 text-teal-800 inline-block lg:text-4xl lg:mb-8"
+                >
+                  Berita Terbaru
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  <!-- Kolom Kiri: Berita Utama -->
+                  <div
+                    class="lg:col-span-2 bg-white rounded-xl shadow overflow-hidden"
+                  >
+                    <img
+                      src="public/bum.jpg"
+                      alt="Artha Guna"
+                      class="w-32 h-32 object-cover m-auto lg:w-64 lg:h-64"
+                    />
+                    <div class="p-2">
+                      <h3
+                        class="text-md font-bold text-gray-900 hover:text-blue-600 cursor-pointer lg:text-2xl"
+                      >
+                        BumDes Artha Guna Semakin Berkembang
+                      </h3>
+                      <p class="text-gray-700 mt-3 leading-relaxed lg:text-lg">
+                        BumDes Artha Guna terus menunjukkan perkembangan yang mengagumkan, menghadirkan berbagai layanan yang tidak hanya ....
+                      </p>
+                      <a
+                        href="bumdes/bumdes1.html"
+                        class="text-blue-600 font-medium mt-4 inline-block hover:underline"
+                      >
+                        Baca Selengkapnya
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Kolom Kanan: Berita Lain -->
+                  <div class="space-y-2">
+                    <h2 class="text-teal-700 lg:text-lg">Berita Lainnya</h2>
+                    <!-- Berita 1 -->
+                    <div
+                      class="flex gap-4 bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
+                    >
+                      <img
+                        src="public/panenjoan.jpg"
+                        alt="eco wisata panenjoan"
+                        class="w-32 h-24 rounded-lg my-4 ms-3 object-cover"
+                      />
+                      <div class="p-3">
+                        <a href="lingkungan/panenjoan.html">
+                          <h4
+                            class="text-md font-semibold text-gray-800 hover:text-blue-600 cursor-pointer"
+                          >
+                            eco wisata Panenjoan
+                          </h4>
+                          <p class="text-sm text-gray-600 mt-1">
+                            eco wisata Panenjoan sudah bukan angan angan semata, progresnya kian terlihat
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Berita 2 -->
+                    <div
+                      class="flex gap-4 bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
+                    >
+                      <img
+                        src="public/kopdes.png"
+                        alt="kopdes"
+                        class="w-42 h-24 object-cover mt-2 ms-3 me-8"
+                      />
+                      <div class="p-3">
+                        <a href="">
+                          <h4
+                            class="text-md font-semibold text-gray-800 hover:text-blue-600 cursor-pointer"
+                          >
+                            Koperasi Desa merah Putih
+                          </h4>
+                          <p class="text-sm text-gray-600 mt-1">
+                            Koperasi Desa Merah Putih Neglasari sudah mulai beroperasi,
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Berita 3 -->
+                    <div
+                      class="flex gap-4 bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
+                    >
+                      <img
+                        src="public/tps3r.jpg"
+                        alt="tps3r"
+                        class="w-32 h-24 object-cover rounded-lg mt-2 ms-3"
+                      />
+                      <div class="p-3">
+                        <a href="">
+                          <h4
+                            class="text-md font-semibold text-gray-800 hover:text-blue-600 cursor-pointer"
+                          >
+                            TPS3R Neglasari
+                          </h4>
+                          <p class="text-sm text-gray-600 mt-1">
+                            TPS3R GAUL desa Neglasari semakin konsisten dalam hal pengelolaan sampah
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <footer class="bg-gray-100 border-t border-gray-500 text-gray-800">
+          <div
+            class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <!-- Brand -->
+            <div>
+              <div class="flex items-center space-x-3">
+                <img
+                  src="public/NEWS.png"
+                  alt="Logo KIM"
+                  class="h-12"
+                />
+              </div>
+              <p class="mt-4 text-sm text-teal-800 font-bold leading-6 lg:text-lg">
+                Portal berita terpercaya di desa Neglasari
+              </p>
+              <a href="#" class="hover:text-blue-700">Beranda</a>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold text-teal-700 mb-2">
+                Kategori Berita
+              </h3>
+              <ul class="space-y-2 text-sm lg:text-md">
+                <li>
+                  <a href="lingkungan/panenjoan.html" class="hover:text-blue-400"
+                    >Lingkungan</a
+                  >
+                </li>
+                <li>
+                  <a href="bumdes.html" class="hover:text-blue-400">Kebersihan</a>
+                </li>
+                <li>
+                  <a href="panenjoan.html" class="hover:text-blue-400"
+                    >Keamanan</a
+                  >
+                </li>
+                <li>
+                  <a href="bumdes/bumdes1.html" class="hover:text-blue-400">BumDes</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">KDMP</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">UMKM</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Galeri</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h3 class="text-lg font-semibold text-black mb-2">
+                Hubungi Kami
+              </h3>
+              <p class="text-md">Neglasari<span class="text-lg text-teal-800 font-bold italic">News</span></p>
+              <p class="text-sm">
+                email:
+                <a
+                  href="mailto:kimneglasari@gmail.com"
+                  class="text-blue-400 hover:text-blue-600"
+                >
+                  kimneglasari@gmail.com
+                </a>
+              </p>
+
+              <!-- Social Icons -->
+              <div class="flex space-x-4 mt-4">
+                <!-- Facebook -->
+                <a href="https://facebook.com/profile.php?id=61581381081848&locale=id_ID" aria-label="Facebook" class="hover:text-blue-500" target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/facebook-new.png"
+                    alt="facebook-new"
+                /></a>
+
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/kim_neglasari/"
+                  aria-label="Instagram"
+                  class="hover:text-pink-500" target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png"
+                    alt="instagram-new--v1"
+                  />
+                </a>
+
+                <!-- YouTube -->
+                <a href="#" aria-label="YouTube" class="hover:text-red-500" target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/youtube-squared.png"
+                    alt="youtube-squared"
+                  />
+                </a>
+
+                <!-- Tiktok -->
+                <a
+                  href="https://www.tiktok.com/@kim_neglasari"
+                  aria-label="Tiktok"
+                  class="hover:text-gray-800" target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/tiktok--v1.png"
+                    alt="tiktok--v1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom -->
+          <div
+            class="border-t border-gray-500 text-center py-4 text-sm text-gray-400"
+          >
+            &copy; 2025 Kelompok Informasi Masyarakat. Semua Hak Dilindungi.
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      feather.replace();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 3000, // jeda 3 detik antar slide
+          disableOnInteraction: false, // tetap jalan meski user klik tombol
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
