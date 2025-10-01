@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id" x-data="{ sidebarOpen: false }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIM | Neglasari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-white font-sans">
+    <div class="flex">
+      <!-- Main Content -->
+      <div class="flex-1 flex flex-col min-h-screen">
+        <!-- Header Mobile -->
+        <header
+          class="bg-white shadow-lg text-teal-900 font-bold relative z-50"
+          x-data="{ sidebarOpen: false }"
+        >
+          <!-- Bagian Mobile / Tablet ke bawah -->
+          <div class="md:hidden flex items-center justify-between p-4">
+            <div class="flex items-center">
+              <img
+                src="/assets/kim-DykDKjyt.jpg"
+                alt="kim i-smart"
+                class="w-10 h-10 me-4 rounded-full object-cover"
+              />
+              <h2 class="text-center text-md font-semibold">
+                Kelompok Informasi Masyarakat <br />
+                <span class="text-center text-lg font-bold"
+                  >( KIM i-smart )</span
+                >
+                <br />
+                <span class="text-center text-gray-900 text-sm">
+                  Desa Neglasari Kec. Majalaya - Bandung
+                </span>
+              </h2>
+            </div>
+            <button
+              @click="sidebarOpen = !sidebarOpen"
+              class="focus:outline-none"
+            >
+              <!-- hamburger -->
+              <svg
+                x-show="!sidebarOpen"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <!-- close -->
+              <svg
+                x-show="sidebarOpen"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Sidebar Mobile dropdown -->
+          <div
+            x-show="sidebarOpen"
+            x-collapse
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
+            class="bg-white text-gray-900 md:hidden shadow-lg overflow-hidden py-6 px-4"
+          >
+            <nav class="w-full">
+              <a
+                href="index.html"
+                class="block py-2 px-4 rounded hover:bg-gray-200"
+                >Beranda</a
+              >
+              <a
+                href="tentang.html"
+                class="block py-2 px-4 rounded hover:bg-gray-200"
+                >Tentang KIM</a
+              >
+              <a
+                href="bumdes.html"
+                class="block py-2 px-4 rounded hover:bg-gray-200"
+                >BUMDesa</a
+              >
+              <a
+                href="panenjoan.html"
+                class="block py-2 px-4 rounded hover:bg-gray-200"
+                >Desa Wisata</a
+              >
+              <a href="#" class="block py-2 px-4 rounded hover:bg-gray-200"
+                >Pokdarwis</a
+              >
+              <a href="#" class="block py-2 px-4 rounded hover:bg-gray-200"
+                >Informasi Desa</a
+              >
+              <a href="#" class="block py-2 px-4 rounded hover:bg-gray-200"
+                >Kegiatan Desa</a
+              >
+              <a href="#" class="block py-2 px-4 rounded hover:bg-gray-200"
+                >Galeri</a
+              >
+            </nav>
+          </div>
+
+          <!-- Navbar Tablet ke atas -->
+          <nav
+            class="hidden md:flex items-center justify-between fixed top-0 left-0 w-full bg-white shadow px-8 py-6 z-[9999]"
+          >
+            <!-- Kiri: Logo -->
+            <div class="flex items-center space-x-3">
+              <img
+                src="public/kim.jpg"
+                alt="kim i-smart"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <span class="font-semibold text-teal-900">KIM i-smart</span>
+            </div>
+
+            <!-- Kanan: Menu -->
+            <div class="flex">
+              <a href="index.html" class="py-2 px-2 rounded hover:bg-gray-200"
+                >Beranda</a
+              >
+              <a href="tentang.html" class="py-2 px-2 rounded hover:bg-gray-200"
+                >Tentang KIM</a
+              >
+              <a href="bumdes.html" class="py-2 px-2 rounded hover:bg-gray-200"
+                >BUMDesa</a
+              >
+              <a
+                href="panenjoan.html"
+                class="py-2 px-2 rounded hover:bg-gray-200"
+                >Desa Wisata</a
+              >
+              <a href="#" class="py-2 px-2 rounded hover:bg-gray-200"
+                >Pokdarwis</a
+              >
+              <a href="#" class="py-2 px-2 rounded hover:bg-gray-200"
+                >Informasi Desa</a
+              >
+              <a href="#" class="py-2 px-2 rounded hover:bg-gray-200"
+                >Kegiatan Desa</a
+              >
+              <a href="#" class="py-2 px-2 rounded hover:bg-gray-200">Galeri</a>
+            </div>
+          </nav>
+        </header>
+
+        <main class="lg:p-8 pt-6 w-full flex-1 flex flex-col lg:mt-20">
+          <section class="relative bg-teal-700 text-white py-20">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+              <h1 class="text-4xl md:text-5xl font-bold mb-4">Tentang Kami</h1>
+              <p class="text-lg md:text-xl opacity-90">
+                Kenali lebih dekat Kelompok Informasi Masyarakat (KIM) kami.
+              </p>
+            </div>
+          </section>
+
+          <!-- Tentang Section -->
+          <section class="py-16 bg-gray-50">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+              <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+                Siapa Kami?
+              </h2>
+              <p class="text-gray-700 leading-relaxed text-lg">
+                Kami adalah Kelompok Informasi Masyarakat (KIM) yang berperan
+                sebagai wadah komunikasi, informasi, dan aspirasi warga. Fokus
+                kami adalah mendukung perkembangan desa melalui penyebaran
+                informasi yang akurat, edukasi masyarakat, serta promosi potensi
+                desa.
+              </p>
+            </div>
+          </section>
+
+          <!-- Visi & Misi -->
+          <section class="py-16">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Visi</h3>
+                <p class="text-gray-700">
+                  Menjadi pusat informasi desa yang terpercaya dan berkontribusi
+                  dalam pembangunan masyarakat yang cerdas, kritis, dan
+                  partisipatif.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Misi</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                  <li>Menyebarkan informasi yang benar dan bermanfaat.</li>
+                  <li>Meningkatkan literasi digital masyarakat.</li>
+                  <li>
+                    Mempromosikan potensi desa ke tingkat yang lebih luas.
+                  </li>
+                  <li>
+                    Menjadi jembatan komunikasi antara masyarakat dan
+                    pemerintah.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tim Kami -->
+          <section class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+              <h2 class="text-2xl md:text-3xl font-semibold mb-12">Tim Kami</h2>
+              <div class="flex flex-wrap justify-center gap-8">
+                <!-- Card Anggota -->
+                <div class="w-[300px] rounded-lg shadow p-6 text-center">
+                  <img
+                    src="public/dummy.png"
+                    alt="Ketua"
+                    class="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
+                  />
+                  <h4 class="text-lg font-semibold">Budi Santoso</h4>
+                  <p class="text-gray-600 text-sm">Ketua</p>
+                </div>
+                <div class="w-[300px] rounded-lg shadow p-6 text-center">
+                  <img
+                    src="public/dummy.png"
+                    alt="Ketua"
+                    class="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
+                  />
+                  <h4 class="text-lg font-semibold">Budi Santoso</h4>
+                  <p class="text-gray-600 text-sm">Sekretaris</p>
+                </div>
+                <div class="w-[300px] rounded-lg shadow p-6 text-center">
+                  <img
+                    src="public/dummy.png"
+                    alt="Ketua"
+                    class="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
+                  />
+                  <h4 class="text-lg font-semibold">Budi Santoso</h4>
+                  <p class="text-gray-600 text-sm">Bendahara</p>
+                </div>
+                <div class="w-[300px] rounded-lg shadow p-6 text-center">
+                  <img
+                    src="public/dummy.png"
+                    alt="Ketua"
+                    class="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
+                  />
+                  <h4 class="text-lg font-semibold">Budi Santoso</h4>
+                  <p class="text-gray-600 text-sm">Anggota</p>
+                </div>
+                <div class="w-[300px] rounded-lg shadow p-6 text-center">
+                  <img
+                    src="public/dummy.png"
+                    alt="Ketua"
+                    class="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
+                  />
+                  <h4 class="text-lg font-semibold">Budi Santoso</h4>
+                  <p class="text-gray-600 text-sm">Anggota</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="bg-gray-100 border-t border-gray-500 text-gray-800">
+          <div
+            class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <!-- Brand -->
+            <div>
+              <div class="flex items-center space-x-3">
+                <img
+                  src="public/kim.jpg"
+                  alt="Logo KIM"
+                  class="h-12 w-12 rounded-full"
+                />
+                <h2 class="text-lg font-bold text-black">
+                  KIM i-smart Desa Neglasari
+                </h2>
+              </div>
+              <p class="mt-4 text-sm leading-6">
+                Kelompok Informasi Masyarakat sebagai pusat informasi dan
+                literasi digital bagi warga desa.
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold text-black mb-4">
+                Tautan Cepat
+              </h3>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a href="index.html" class="hover:text-blue-400">Beranda</a>
+                </li>
+                <li>
+                  <a href="tentang.html" class="hover:text-blue-400"
+                    >Tentang KIM</a
+                  >
+                </li>
+                <li>
+                  <a href="bumdes.html" class="hover:text-blue-400">BUMDesa</a>
+                </li>
+                <li>
+                  <a href="panenjoan.html" class="hover:text-blue-400"
+                    >Desa Wisata</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Pokdarwis</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Informasi Desa</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Kegiatan Desa</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Galeri</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h3 class="text-lg font-semibold text-black mb-4">
+                Hubungi Kami
+              </h3>
+              <p class="text-sm">KIM i-smart Neglasari</p>
+              <p class="text-sm">
+                email:
+                <a
+                  href="mailto:kimneglasari@gmail.com"
+                  class="text-blue-400 hover:text-blue-600"
+                >
+                  kimneglasari@gmail.com
+                </a>
+              </p>
+
+              <!-- Social Icons -->
+              <div class="flex space-x-4 mt-4">
+                <!-- Facebook -->
+                <a href="#" aria-label="Facebook" class="hover:text-blue-500"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/facebook-new.png"
+                    alt="facebook-new"
+                /></a>
+
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/kim_neglasari/"
+                  aria-label="Instagram"
+                  class="hover:text-pink-500"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png"
+                    alt="instagram-new--v1"
+                  />
+                </a>
+
+                <!-- YouTube -->
+                <a href="#" aria-label="YouTube" class="hover:text-red-500"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/youtube-squared.png"
+                    alt="youtube-squared"
+                  />
+                </a>
+
+                <!-- Tiktok -->
+                <a
+                  href="https://www.tiktok.com/@kim_neglasari"
+                  aria-label="Tiktok"
+                  class="hover:text-gray-800"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/tiktok--v1.png"
+                    alt="tiktok--v1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom -->
+          <div
+            class="border-t border-gray-500 text-center py-4 text-sm text-gray-400"
+          >
+            &copy; 2025 Kelompok Informasi Masyarakat. Semua Hak Dilindungi.
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
