@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth" x-data="{ sidebarOpen: false }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIM | Neglasari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-white font-sans">
+    <div class="flex">
+      <!-- Main Content -->
+      <div class="flex-1 flex flex-col min-h-screen">
+        <!-- Header Mobile -->
+        <header class="bg-white shadow-lg text-teal-900 relative z-50">
+          <!-- Bagian Mobile / Tablet ke bawah -->
+          <div class="flex items-center justify-center p-2">
+            <div class="flex items-center lg:space-x-12">
+              <img
+                src="../public/NEWS.png"
+                alt="NeglasariNews"
+                class="w-auto h-10 me-4 object-cover md:h-[45px] lg:h-[65px]"
+              />
+              <h2 class="text-center text-md font-semibold lg:text-3xl">
+                Neglasari<span class="text-center text-lg font-bold lg:text-4xl"
+                  >News</span
+                >
+              </h2>
+            </div>
+          </div>
+          <div
+            class="text-center text-sm lg:text-lg lg:font-semibold font-bold space-x-2 lg:space-x-4 mb-3"
+          >
+            <a
+              href="../index.html"
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Beranda</a
+            >
+            <a
+              href="../lingkungan/panenjoan.html"
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Lingkungan</a
+            >
+            <a
+              href=""
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Kebersihan</a
+            >
+            <a
+              href=""
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Keamanan</a
+            >
+            <a
+              href="#"
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >BumDes</a
+            >
+            <a
+              href=""
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >KDMP</a
+            >
+            <a
+              href=""
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >UMKM</a
+            >
+            <div
+              x-data="{ open: false }"
+              class="lg:hidden relative inline-block"
+            >
+              <!-- Tombol Utama -->
+              <button
+                @click="open = !open"
+                class="hover:text-blue-700 hover:font-bold hover:underline"
+              >
+                Ekonomi
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                x-show="open"
+                @click.away="open = false"
+                class="absolute left-0 mt-2 w-30 bg-white border rounded-md shadow-lg"
+              >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >BumDes</a
+                >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >KDMP</a
+                >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >UMKM</a
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="mb-10 pt-6 flex-1 flex flex-col lg:px-4 lg:py-3">
+          <div class="flex-1">
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr]">
+              <div class="flex justify-center items-center py-4">
+                <img
+                  src="../public/bum.png"
+                  alt="bumdes"
+                  class="w-32 lg:w-64"
+                />
+              </div>
+              <div class="p-4">
+                <h2
+                  class="text-lg lg:text-4xl font-bold text-center mb-4 lg:mb-6"
+                >
+                  Bumdes Artha Guna
+                </h2>
+                <p class="text-sm lg:text-lg mb-2">
+                  BumDes Artha Guna terus menunjukkan perkembangan yang
+                  mengagumkan, menghadirkan berbagai layanan yang tidak hanya
+                  bermanfaat bagi warga Desa Neglasari, tetapi juga mampu
+                  membuka peluang ekonomi baru. Dari pengelolaan sampah terpadu,
+                  penyediaan kebutuhan pokok, hingga pengembangan unit usaha
+                  UMKM, BumDes ini menjadi motor penggerak perekonomian desa.
+                </p>
+                <p class="text-sm lg:text-lg mb-2">
+                  Kepala Desa Neglasari
+                  <span class="font-semibold"
+                    >H.Asep Zaenal Malik Ibrahim,SP.S.Pd.I</span
+                  >
+                  menyampaikan bahwa dukungan masyarakat sangat penting dalam
+                  mendorong keberhasilan program-program BumDes.
+                  <span class="italic"
+                    >"adanya partisipasi aktif warga, kami yakin BumDes Artha
+                    Guna akan terus berkembang dan memberi manfaat nyata bagi
+                    semua lapisan masyarakat,”</span
+                  >
+                  ujarnya.
+                </p>
+                <p class="text-sm lg:text-lg mb-4">
+                  Ditempat yang sama, Direktur Utama Bumdes Artha Guna
+                  <span class="font-semibold">Sofian Ibnu Pandi</span>
+                  menyampaikan
+                  <span class="italic"
+                    >"BUMDes membuka program baru yaitu paket tabungan Haji dan
+                    Umroh. Dengan bekerjasama dengan po Tour & Travel yang
+                    terpercaya dan sangat berpengalaman".</span
+                  >
+                </p>
+                <p class="text-sm lg:text-lg mb-2">
+                  Ke depan, BumDes Artha Guna berencana memperluas jaringan
+                  usaha dengan menggandeng mitra strategis, termasuk sektor
+                  digitalisasi pemasaran. Langkah ini diharapkan dapat
+                  memperkenalkan produk-produk lokal ke pasar yang lebih luas,
+                  sekaligus meningkatkan pendapatan desa.
+                </p>
+                <p class="italic text-sm text-teal-600 mb-2 lg:text-md lg:mb-6">
+                  Neglasari, 30 September 2025 | red.
+                </p>
+                <a href="https://arthaguna.com/" target="_blank" class="text-sm"
+                  >Kunjungi :
+                  <span class="text-blue-600 underline italic lg:text-lg"
+                    >arthaguna.com</span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-2 bg-gray-50">
+          <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-teal-800 mb-3 font-semibold underline lg:text-2xl">
+              Produk Unggulan Artha Guna
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 justify-center gap-8">
+              <!-- Card -->
+              <div class="w-full rounded-lg shadow px-2 py-6 text-center">
+                <img
+                  src="../public/bum1.jpg"
+                  alt="Ketua"
+                  class="w-full h-32 lg:h-48 mx-auto mb-4"
+                />
+                <div class="flex items-center mb-2">
+                  <div class="bg-blue-700 w-6 h-px ms-6 me-2"></div>
+                  <h4 class="text-md font-semibold">Argun.Net</h4>
+                  <div class="bg-blue-700 w-6 h-px ms-2"></div>
+                </div>
+                <p class="text-gray-600 text-sm text-start">
+                  Unit Usaha di bidang pengembangan jaringan internet desa
+                  bekerjasama dengan perusahaan-perusahaan ISP berskala
+                  nasional.
+                </p>
+              </div>
+              <div class="w-full rounded-lg shadow px-2 py-6 text-center">
+                <img
+                  src="../public/bum2.jpg"
+                  alt="Ketua"
+                  class="w-full h-32 lg:h-48 mx-auto mb-4"
+                />
+                <div class="flex items-center mb-2">
+                  <div class="bg-blue-700 w-6 h-px ms-6 me-2"></div>
+                  <h4 class="text-md font-semibold">Jasa Keuangan</h4>
+                  <div class="bg-blue-700 w-6 h-px ms-2"></div>
+                </div>
+                <p class="text-gray-600 text-sm text-start">
+                  Melayani penyimpanan dana investasi untuk usaha mikro, kecil
+                  dan menengah bekerja sama dengan bank-bank milik pemerintah.
+                </p>
+              </div>
+              <div class="w-full rounded-lg shadow px-2 py-6 text-center">
+                <img
+                  src="../public/bum3.jpg"
+                  alt="Ketua"
+                  class="w-full h-32 lg:h-48 mx-auto mb-4"
+                />
+                <div class="flex items-center mb-2">
+                  <div class="bg-blue-700 w-6 h-px ms-6 me-2"></div>
+                  <h4 class="text-md font-semibold">Layanan PPOB</h4>
+                  <div class="bg-blue-700 w-6 h-px ms-2"></div>
+                </div>
+                <p class="text-gray-600 text-sm text-start">
+                  Menerima jasa pembayaran tagihan, isi ulang token PLN,
+                  transfer antar bank secara online, pengisian pulsa dan data
+                  internet ponsel.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-gray-200 p-6 lg:px-24 mb-10 mt-10 rounded-lg">
+          <h4 class="text-md lg:text-xl font-semibold text-center mb-3">
+            Informasi Lebih Lanjut
+          </h4>
+          <div class="flex flex-col gap-4 w-56">
+            <!-- WhatsApp -->
+            <a
+              href="https://wa.me/6281322099110"
+              target="_blank"
+              class="flex items-center text-green-700"
+            >
+              <!-- Ikon WhatsApp (SVG) -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 me-2"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.67-1.611-.916-2.207-.242-.579-.487-.5-.67-.51l-.572-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.1 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M20.52 3.48A11.938 11.938 0 0 0 12 0C5.373 0 0 5.373 0 12c0 2.119.552 4.19 1.598 6.016L0 24l6.186-1.571A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.19-1.24-6.188-3.48-8.52zM12 22a9.94 9.94 0 0 1-5.053-1.382l-.36-.214-3.676.933.98-3.584-.235-.369A9.942 9.942 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"
+                />
+              </svg>
+              081322099110
+            </a>
+
+            <!-- Website -->
+            <a
+              href="https://arthaguna.com/"
+              target="_blank"
+              class="flex items-center text-blue-600"
+            >
+              <!-- Ikon Globe -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 me-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9zm0 0c2.485 0 4.5 4.03 4.5 9s-2.015 9-4.5 9-4.5-4.03-4.5-9 2.015-9 4.5-9zm0 0v18m-9-9h18"
+                />
+              </svg>
+              https://arthaguna.com/
+            </a>
+
+            <!-- Email -->
+            <a
+              href="mailto:email@domain.com"
+              class="flex items-center text-red-600"
+            >
+              <!-- Ikon Amplop -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 me-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z"
+                />
+              </svg>
+              Email
+            </a>
+          </div>
+        </section>
+
+        <footer class="bg-gray-100 border-t border-gray-500 text-gray-800">
+          <div
+            class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <!-- Brand -->
+            <div>
+              <div class="flex items-center space-x-3">
+                <img src="../public/NEWS.png" alt="Logo KIM" class="h-12" />
+              </div>
+              <p
+                class="mt-4 text-sm text-teal-800 font-bold leading-6 lg:text-lg"
+              >
+                Portal berita terpercaya di desa Neglasari
+              </p>
+              <a href="../index.html" class="hover:text-blue-700">Beranda</a>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold text-teal-700 mb-2">
+                Kategori Berita
+              </h3>
+              <ul class="space-y-2 text-sm lg:text-md">
+                <li>
+                  <a
+                    href="../lingkungan/panenjoan.html"
+                    class="hover:text-blue-400"
+                    >Lingkungan</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Kebersihan</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Keamanan</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">BumDes</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">KDMP</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">UMKM</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Galeri</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h3 class="text-lg font-semibold text-black mb-2">
+                Hubungi Kami
+              </h3>
+              <p class="text-md">
+                Neglasari<span class="text-lg text-teal-800 font-bold italic"
+                  >News</span
+                >
+              </p>
+              <p class="text-sm">
+                email:
+                <a
+                  href="mailto:kimneglasari@gmail.com"
+                  class="text-blue-400 hover:text-blue-600"
+                >
+                  kimneglasari@gmail.com
+                </a>
+              </p>
+
+              <!-- Social Icons -->
+              <div class="flex space-x-4 mt-4">
+                <!-- Facebook -->
+                <a
+                  href="https://facebook.com/profile.php?id=61581381081848&locale=id_ID"
+                  aria-label="Facebook"
+                  class="hover:text-blue-500"
+                  target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/facebook-new.png"
+                    alt="facebook-new"
+                /></a>
+
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/kim_neglasari/"
+                  aria-label="Instagram"
+                  class="hover:text-pink-500"
+                  target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png"
+                    alt="instagram-new--v1"
+                  />
+                </a>
+
+                <!-- YouTube -->
+                <a
+                  href="#"
+                  aria-label="YouTube"
+                  class="hover:text-red-500"
+                  target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/youtube-squared.png"
+                    alt="youtube-squared"
+                  />
+                </a>
+
+                <!-- Tiktok -->
+                <a
+                  href="https://www.tiktok.com/@kim_neglasari"
+                  aria-label="Tiktok"
+                  class="hover:text-gray-800"
+                  target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/tiktok--v1.png"
+                    alt="tiktok--v1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom -->
+          <div
+            class="border-t border-gray-500 text-center py-4 text-sm text-gray-400"
+          >
+            &copy; 2025 Kelompok Informasi Masyarakat. Semua Hak Dilindungi.
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
