@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth" x-data="{ sidebarOpen: false }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIM | Neglasari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-white font-sans">
+    <div class="flex">
+      <!-- Main Content -->
+      <div class="flex-1 flex flex-col min-h-screen">
+        <!-- Header Mobile -->
+        <header class="bg-white shadow-lg text-teal-900 relative z-50">
+          <!-- Bagian Mobile / Tablet ke bawah -->
+          <div class="flex items-center justify-center p-2">
+            <div class="flex items-center lg:space-x-12">
+              <img
+                src="../public/NEWS.png"
+                alt="NeglasariNews"
+                class="w-auto h-10 me-4 object-cover md:h-[45px] lg:h-[65px]"
+              />
+              <h2 class="text-center text-md font-semibold lg:text-3xl">
+                Neglasari<span class="text-center text-lg font-bold lg:text-4xl"
+                  >News</span
+                >
+              </h2>
+            </div>
+          </div>
+          <div
+            class="text-center text-sm lg:text-lg lg:font-semibold font-bold space-x-2 lg:space-x-4 mb-3"
+          >
+            <a
+              href="../index.html"
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Beranda</a
+            >
+            <a
+              href="../lingkungan/panenjoan.html"
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Lingkungan</a
+            >
+            <a
+              href=""
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Kebersihan</a
+            >
+            <a
+              href=""
+              class="hover:text-blue-700 hover:text-bold hover:underline"
+              >Keamanan</a
+            >
+            <a
+              href="#"
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >BumDes</a
+            >
+            <a
+              href=""
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >KDMP</a
+            >
+            <a
+              href=""
+              class="hidden lg:inline-block hover:text-blue-700 hover:text-bold hover:underline"
+              >UMKM</a
+            >
+            <div
+              x-data="{ open: false }"
+              class="lg:hidden relative inline-block"
+            >
+              <!-- Tombol Utama -->
+              <button
+                @click="open = !open"
+                class="hover:text-blue-700 hover:font-bold hover:underline"
+              >
+                Ekonomi
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                x-show="open"
+                @click.away="open = false"
+                class="absolute left-0 mt-2 w-30 bg-white border rounded-md shadow-lg"
+              >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >BumDes</a
+                >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >KDMP</a
+                >
+                <a href="#" class="block text-start px-2 py-2 hover:bg-blue-100"
+                  >UMKM</a
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="mb-10 pt-6 flex-1 flex flex-col lg:px-4 lg:py-3">
+          <div class="flex-1">
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr]">
+              <div class="flex justify-center items-center py-4">
+                <img
+                  src="../public/posyandu4.jpg"
+                  alt="bumdes"
+                  class="w-full lg:w-64"
+                />
+              </div>
+              <div class="p-4">
+                <h2
+                  class="text-md lg:text-4xl font-bold text-center mb-4 lg:mb-6"
+                >
+                  Kegiatan Posyandu Cempaka 4, Rw 04 Desa Neglasari
+                </h2>
+                <p>
+                  <strong>Cibeunying Legok</strong> - Kegiatan Posyandu Cempaka
+                  4, yang berlokasi di RW 04 Desa Neglasari, Kecamatan Majalaya,
+                  kembali digelar pada Rabu (8/10/2025). Acara ini dihadiri ibu
+                  - ibu, balita dan lansia yang datang untuk melakukan
+                  pemeriksaan kesehatan rutin.
+                </p>
+                <p>
+                  Kegiatan dimulai pukul 08.00 WIB dengan agenda utama
+                  penimbangan balita serta pemeriksaan kesehatan lansia. Para
+                  kader Posyandu melayani warga dengan ramah dan penuh semangat.
+                </p>
+                <p class="italic">
+                  “Kami sangat senang karena antusiasme warga semakin meningkat
+                  setiap bulannya. Posyandu bukan hanya untuk menimbang anak,
+                  tapi juga menjadi sarana edukasi bagi ibu-ibu tentang
+                  pentingnya gizi dan kesehatan keluarga, dan pada kegiatan hari
+                  ini tercatat 105 balita yang sudah datang ke posyandu.” ujar
+                  <span class="font-semibold">Ibu Eka</span>, Kader Posyandu
+                  Cempaka 4.
+                </p>
+                <p>
+                  Selain penimbangan balita, kegiatan diisi juga dengan
+                  pemeriksaan kesehatan bagi para ibu-ibu dan lansia, seperti
+                  pemeriksaan tekanan darah, cek gula dan kolesterol.
+                </p>
+                <p>
+                  “Kami berharap masyarakat terus aktif datang ke Posyandu,
+                  karena kegiatan ini penting untuk memantau kesehatan anak dan
+                  lansia secara berkelanjutan,” tambah
+                  <span class="font-semibold">Ibu Eka</span>.
+                </p>
+                <p>
+                  Di akhir kegiatan, para peserta mendapatkan paket makanan
+                  tambahan (PMT) berupa bubur kacang hijau dan susu untuk balita
+                  serta vitamin untuk para lansia.
+                </p>
+                <p>
+                  Kegiatan Posyandu ini rutin diadakan tiap bulan di seluruh Rw
+                  yang ada di desa Neglasari, dan merupakan salah satu bentuk
+                  nyata dari program pemerintah desa dalam mendukung peningkatan
+                  derajat kesehatan masyarakat melalui pelayanan terpadu di
+                  tingkat RW.
+                </p>
+                <p
+                  class="italic text-sm text-teal-600 mb-2 mt-4 lg:text-md lg:mb-6"
+                >
+                  Neglasari-News, 8 Oktober 2025 | red.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="bg-gray-100 border-t border-gray-500 text-gray-800">
+          <div
+            class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <!-- Brand -->
+            <div>
+              <div class="flex items-center space-x-3">
+                <img src="../public/NEWS.png" alt="Logo KIM" class="h-12" />
+              </div>
+              <p
+                class="mt-4 text-sm text-teal-800 font-bold leading-6 lg:text-lg"
+              >
+                Portal berita terpercaya di desa Neglasari
+              </p>
+              <a href="../index.html" class="hover:text-blue-700">Beranda</a>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold text-teal-700 mb-2">
+                Kategori Berita
+              </h3>
+              <ul class="space-y-2 text-sm lg:text-md">
+                <li>
+                  <a
+                    href="../lingkungan/panenjoan.html"
+                    class="hover:text-blue-400"
+                    >Lingkungan</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Kebersihan</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Keamanan</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">BumDes</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">KDMP</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">UMKM</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blue-400">Galeri</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h3 class="text-lg font-semibold text-black mb-2">
+                Hubungi Kami
+              </h3>
+              <p class="text-md">
+                Neglasari<span class="text-lg text-teal-800 font-bold italic"
+                  >News</span
+                >
+              </p>
+              <p class="text-sm">
+                email:
+                <a
+                  href="mailto:kimneglasari@gmail.com"
+                  class="text-blue-400 hover:text-blue-600"
+                >
+                  kimneglasari@gmail.com
+                </a>
+              </p>
+
+              <!-- Social Icons -->
+              <div class="flex space-x-4 mt-4">
+                <!-- Facebook -->
+                <a
+                  href="https://facebook.com/profile.php?id=61581381081848&locale=id_ID"
+                  aria-label="Facebook"
+                  class="hover:text-blue-500"
+                  target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/facebook-new.png"
+                    alt="facebook-new"
+                /></a>
+
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/kim_neglasari/"
+                  aria-label="Instagram"
+                  class="hover:text-pink-500"
+                  target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png"
+                    alt="instagram-new--v1"
+                  />
+                </a>
+
+                <!-- YouTube -->
+                <a
+                  href="#"
+                  aria-label="YouTube"
+                  class="hover:text-red-500"
+                  target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/youtube-squared.png"
+                    alt="youtube-squared"
+                  />
+                </a>
+
+                <!-- Tiktok -->
+                <a
+                  href="https://www.tiktok.com/@kim_neglasari"
+                  aria-label="Tiktok"
+                  class="hover:text-gray-800"
+                  target="_blank"
+                  ><img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/tiktok--v1.png"
+                    alt="tiktok--v1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom -->
+          <div
+            class="border-t border-gray-500 text-center py-4 text-sm text-gray-400"
+          >
+            &copy; 2025 Kelompok Informasi Masyarakat. Semua Hak Dilindungi.
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
